@@ -3,39 +3,49 @@ package primos;
 import java.util.Scanner;
 
 /** Classe principal para chamar o sistema.
- * @author Felipe
+ * @author Bruno, Carlos Eduardo e Felipe
  */
 public class Main {
 
-    /** mÃ©todo MAIN para executar o sistema
+    /** método MAIN para executar o sistema
      */
     public static void main(String[] args) {
         int opcao;
-        int temp;
+        int numero;
         String continua;
         Scanner entrada = new Scanner(System.in);
 
         do{
-            System.out.print("Entre com um nÃºmero inteiro: ");
-            temp = entrada.nextInt();
+            System.out.print("Entre com um número inteiro: ");
+            numero = entrada.nextInt();
             try{
-                testaMaiorUm(temp);
-                TestePrimos numero = new TestePrimos(temp);
+                testaMaiorUm(numero);
+                TestePrimos numero_testes_primalidade = new TestePrimos(numero);
 
-                System.out.println("Deseja testar por qual tÃ©cnica?");
-                System.out.println("1- ForÃ§a Bruta");
+                System.out.println("Deseja testar por qual técnica?");
+                System.out.println("1- Força Bruta");
                 System.out.println("2- Teste de Fermat");
 
                 opcao = entrada.nextInt();
                 switch (opcao){
                         case 1:
-                            System.out.println(numero.calculaForcaBruta());
+                            if(numero_testes_primalidade.calculaForcaBruta()){
+                            	System.out.println("O número " + numero + " é primo");
+                            }
+                            else{
+                            	System.out.println("O número " + numero + " não é primo");
+                            }
                             break;
                         case 2:
-                            System.out.println(numero.calculaFermat());
+                            if(numero_testes_primalidade.calculaFermat()){
+                            	System.out.println("O número " + numero + " é primo");
+                            }
+                            else{
+                            	System.out.println("O número " + numero + " não é primo");
+                            }
                             break;
                         default:
-                            System.out.println("OpÃ§Ã£o invÃ¡lida.");
+                            System.out.println("Opção inválida.");
                             break;
                 }
             }catch(Exception e){
@@ -48,14 +58,14 @@ public class Main {
         System.out.println("Programa Terminado");
     }
 
-    /**MÃ©todo para verificar se o numero passado Ã© maior que 1(um).
+    /**Método para verificar se o numero passado é maior que 1(um).
      *
      * @param numero
      * @throws Exception
      */
     public static void testaMaiorUm(int numero) throws Exception{
         if(numero<1){
-            throw new Exception("\nO nÃºmero deve ser maior que 1 (um).");
+            throw new Exception("\nO número deve ser maior que 1 (um).");
         }
     }
 
