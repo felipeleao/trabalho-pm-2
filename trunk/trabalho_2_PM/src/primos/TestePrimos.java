@@ -4,9 +4,9 @@
 
 package primos;
 
-/** Classe para realizar testes com os nÃºmeros e verificar se eles sÃ£o
+/** Classe para realizar testes com os números e verificar se eles são
  * primos.
- * @author Bruno, Felipe e Cadu;
+ * @author Bruno, Carlos Eduardo e Felipe;
  * @version 1.0;
  */
 public class TestePrimos {
@@ -28,33 +28,35 @@ public class TestePrimos {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    /**MÃ©todo para verificar se um nÃºmero Ã© primo atravÃ©s de forÃ§a bruta,
-     * divide-se o nÃºmero passado como parametro por todos os numeros menores
-     * que ele e maiores que 1, se houver resto de divisÃ£o igual a zero
-     * o nÃºmero nÃ£o Ã© primo
+    /**Método para verificar se um número é primo através de força bruta,
+     * divide-se o número passado como parametro por todos os numeros menores
+     * que ele e maiores que 1, se houver resto de divisão igual a zero
+     * o número não é primo
      *
-     * @return String - Informa se o nÃºmero Ã© primo ou nÃ£o;
+     * @return Boolean - Informa se o número é primo ou não;
      */
-    public String calculaForcaBruta() {
-        for(int i = 2; i < numero; i++){
+    public boolean calculaForcaBruta() {
+        for(int i = 2; i < (numero/2) + 1; i++){
             if((numero%i) == 0){
-                return "O nÃºmero " + numero + " nÃ£o Ã© primo";
+                return false;
             }
         }
-        return "O nÃºmero " + numero + " Ã© primo";
+        return true;
     }
 
-    /** MÃ©todo de FERMAT para calcular se um nÃºmero Ã© primo, 
-     * este mÃ©todo Ã© menos custoso pois nÃ£o precisa dividir
-     * o nÃºmero por todos os seus antecessores
+    /**Método de FERMAT para calcular se um número é primo, 
+     * este Método é menos custoso pois não precisa dividir
+     * o número por todos os seus antecessores
      * 
-     * @return String - Texto infromando se o nÃºmero Ã© primo ou nÃ£o
+     * @param Int - base para o teste de fermat
+     * 
+     * @return Boolean - informando se o número é primo ou não
      */
-    public String calculaFermat() {
+    public boolean calculaFermat() {
         if((Math.pow(num_padrao_teste_fermat,numero - 1) % numero) == 1){
-            return "O nÃºmero " + numero +" Ã© primo";
+            return true;
         }
-        return "O nÃºmero " + numero + " nÃ£o Ã© primo";
+        return false;
     }
 
    
