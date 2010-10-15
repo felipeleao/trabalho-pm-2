@@ -117,4 +117,25 @@ public class TestesRotinasForcaBruta {
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
+	
+	/**Método para testar números de Carmichael. Numeros de 
+	 * Carmichael são números NÃO primos que ao serem testados 
+	 * pelo método de Fermat são reconhecidos como primos. O 
+	 * método de força bruta deve informar que os números NÃO SÃO PRIMOS.
+	 * 
+	 * Números testados:
+	 * 	# 561 - Resultado esperado: False -> OK
+	 *  # 1105 - Resultado esperado: False -> OK
+	 * 
+	 * @author Felipe
+	 */
+	@Test
+	public void testCarmichael(){
+		numeroTeste.setNumero(561);
+		assertFalse(numeroTeste.calculaForcaBruta());
+		
+		numeroTeste.setNumero(1105);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
 }
