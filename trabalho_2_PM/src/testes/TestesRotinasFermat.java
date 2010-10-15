@@ -187,6 +187,24 @@ public class TestesRotinasFermat {
 		
 	}
 	
+	/**Caso de teste para o menor numero inteiro possivel.
+	 * Menor Inteiro: -((2^31)-1) = -2147483648
+	 * 
+	 * 
+	 * 
+	 * @author Cadu
+	 */
+	@Test
+	public void testFermatNumeroInteiroNegativoExtremo(){
+		
+		//fazendo set no numero desejado
+		numero.setNumero(-2147483648); 
+		
+		
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
 	
 	
 }
