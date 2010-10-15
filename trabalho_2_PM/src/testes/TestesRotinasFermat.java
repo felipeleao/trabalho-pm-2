@@ -71,7 +71,7 @@ public class TestesRotinasFermat {
 		numero.setNumero(7917); 
 		assertFalse(numero.calculaFermat());
 	
-	}	
+	}
 	
 	/**Teste pertencente a classe de equivalencia:
 	 * N é um numero inteiro negativo
@@ -90,7 +90,6 @@ public class TestesRotinasFermat {
 		assertFalse(numero.calculaFermat());
 	
 	}
-	
 	
 	/**Teste pertencente a classe de equivalencia:
 	 * N é igual a 0
@@ -127,6 +126,26 @@ public class TestesRotinasFermat {
 				
 		
 	}
+	
+	/**Teste pertencente a classe de equivalencia:
+	 * N é um número inteiro de maior valor comportado pelo tipo int
+	 * 
+	 * 
+	 * valores (2^31) - 1
+	 */
+	@Test
+	public void testFermatNumeroInteiroPositivoExtremo(){
+		
+		//fazendo set no numero desejado
+		numero.setNumero((int) (Math.pow(2,31)- 1)); 
+		
+		//o numero (2^31) - 1 é um numero primo
+		assertTrue(numero.calculaFermat());
+				
+		
+	}
+	
+	
 	
 	
 }
