@@ -206,5 +206,47 @@ public class TestesRotinasFermat {
 		
 	}
 	
+	/////
+	
+	/**Caso de teste para o numero sucessor ao menor inteiro possivel.
+	 * Menor Inteiro: -((2^31)-1) = -2147483648
+	 * 
+	 * Sucessor testado:
+	 * -((2^31)) = -2147483647
+	 *
+	 * 
+	 * @author Cadu
+	 */
+	@Test 
+	public void testFermatNumeroSucessorAoInteiroNegativoExtremo(){
+		
+		//fazendo set no numero desejado
+		numero.setNumero(-2147483647); 
+		
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
+	
+	/**Caso de teste para o numero antecessor ao maior inteiro possivel.
+	 * Menor Inteiro: -((2^31)-1) = -2147483648
+	 * 
+	 * Antecessor testado:
+	 * -((2^31)-2) = -2147483649
+	 *
+	 * 
+	 * @author Cadu
+	 */
+	@Test (expected = Error.class)
+	public void testFermatNumeroAntecessorAoInteiroNegativoExtremo(){
+		
+		//fazendo set no numero desejado
+		numero.setNumero(2147483649); 
+		
+		
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
 	
 }
