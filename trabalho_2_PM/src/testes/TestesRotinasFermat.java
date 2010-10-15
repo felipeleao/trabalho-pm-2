@@ -127,11 +127,12 @@ public class TestesRotinasFermat {
 		
 	}
 	
-	/**Teste pertencente a classe de equivalencia:
-	 * N é um número inteiro de maior valor comportado pelo tipo int
+	/**Caso de teste para o maior número inteiro possível.
+	 * Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
 	 * 
-	 * valores (2^31) - 1
+	 * 
+	 * @author Cadu
 	 */
 	@Test
 	public void testFermatNumeroInteiroPositivoExtremo(){
@@ -145,6 +146,26 @@ public class TestesRotinasFermat {
 		
 	}
 	
+	/**Caso de teste para o número sucessor ao maior inteiro possível.
+	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * 
+	 * Sucessor testado:
+	 * (2^31) 	= +2147483648
+	 *
+	 * 
+	 * @author Cadu
+	 */
+	@Test (expected = Error.class)
+	public void testFermatNumeroSucessorAoInteiroPositivoExtremo() throws Exception{
+		
+		//fazendo set no numero desejado
+		numero.setNumero(2147483648); 
+		
+		//o numero (2^31) - 1 é um numero primo
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
 	
 	
 	
