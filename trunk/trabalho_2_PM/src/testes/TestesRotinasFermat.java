@@ -42,6 +42,35 @@ public class TestesRotinasFermat {
 		
 		
 	}
+	/**Teste pertencente a classe de equivalencia:
+	 * N é um numero inteiro positivo nao primo
+	 *  
+	 * valores 1,4,6,8,7917
+	 */
+	@Test
+	public void testFermatNumeroInteiroPositivoNaoPrimo(){
+		
+		//fazendo set no numero desejado
+		numero.setNumero(1); 
+		assertFalse(numero.calculaFermat());
+		
+		//fazendo set no numero desejado
+		numero.setNumero(4); 
+		assertFalse(numero.calculaFermat());
+		
+		//fazendo set no numero desejado
+		numero.setNumero(6); 
+		assertFalse(numero.calculaFermat());
+		
+		//fazendo set no numero desejado
+		numero.setNumero(8); 
+		assertFalse(numero.calculaFermat());
+		
+		//fazendo set no numero desejado
+		numero.setNumero(7917); 
+		assertFalse(numero.calculaFermat());
+	
+	}	
 	
 	
 }
