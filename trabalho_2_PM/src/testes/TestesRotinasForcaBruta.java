@@ -21,6 +21,12 @@ public class TestesRotinasForcaBruta {
 	/**Método para testar somente números inteiros e positivos.
 	 * Todo número testado neste método é primo.
 	 * 
+	 * Números testados:
+	 * 	# 2 - Resultado esperado: True -> OK
+	 *  # 3 - Resultado esperado: True -> OK
+	 *  # 5 - Resultado esperado: True -> OK
+	 *  # 7919 - Resultado esperado: True -> OK
+	 * 
 	 * @author Felipe
 	 * 
 	 */
@@ -45,6 +51,9 @@ public class TestesRotinasForcaBruta {
 	/**Método para testar o maior inteiro possível.
 	 * Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
+	 * Número testado:
+	 * 	# (2^31)-1 - Resultado esperado: True -> OK
+	 * 
 	 * @author Felipe
 	 */
 	@Test
@@ -57,6 +66,13 @@ public class TestesRotinasForcaBruta {
 	/**Método para testar somente números inteiros e positivos.
 	 * Este caso de teste tem como objetivo testar somente números
 	 * que NÃO são primos!
+	 * 
+	 * Números testados:
+	 * 	# 1 - Resultado esperado: False -> OK
+	 *  # 4 - Resultado esperado: False -> OK
+	 *  # 6 - Resultado esperado: False -> OK
+	 *  # 8 - Resultado esperado: False -> OK
+	 *  # 7917 - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
 	 */
@@ -77,14 +93,16 @@ public class TestesRotinasForcaBruta {
 		numeroTeste.setNumero(7917);
 		assertFalse(numeroTeste.calculaForcaBruta());
 		
-		numeroTeste.setNumero(8);
-		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	
 	/**Método para testar somente números inteiros e negativos.
 	 * Passam-se números inteiros negativos e espera-se que 
 	 * eles não sejam Primos.
+	 * 
+	 * Números testados:
+	 * 	# (-1) - Resultado esperado: False -> OK
+	 *  # (-2) - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
 	 */
@@ -100,11 +118,12 @@ public class TestesRotinasForcaBruta {
 	
 	/**Método para testar os números adjacentes ao
 	 * maior inteiro possível.
+	 * 
 	 * Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
 	 * Adjacentes testados:
-	 * (2^31)-2 = +2147483646
-	 * (2^31)-3 = +2147483645
+	 *  # (2^31)-2 = +2147483646 - Resultado Esperado: False -> OK
+	 *  # (2^31)-3 = +2147483645 - Resultado Esperado: False -> OK
 	 * 
 	 * @author Felipe
 	 */
