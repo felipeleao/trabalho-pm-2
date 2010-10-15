@@ -38,11 +38,10 @@ public class TestePrimos {
      * @return Boolean - Informa se o número é primo ou não;
      */
     public boolean calculaForcaBruta(){
-        if(numero==1 || numero==4){
-        	return false;
-        }else if(numero<1){
-        	return false;
-        }
+        
+    	if(numero == 1 || numero == 4){return false;}
+        
+        if(numero < 1){return false;}
     	
     	for(int i = 2; i < (numero/2) + 1; i++){
             if((numero%i) == 0){
@@ -60,7 +59,15 @@ public class TestePrimos {
      * @return Boolean - informando se o número é primo ou não
      */
     public boolean calculaFermat() {
-        if((Math.pow(num_padrao_teste_fermat,numero - 1) % numero) == 1){
+    	
+    	if(numero == 1){return false;}
+        
+        if(numero < 1){return false;}
+    	
+        //o numero 2 é primo mas nao passa no teste no fermat
+        if(numero == 2){return true;}
+        
+    	if((Math.pow(num_padrao_teste_fermat,numero - 1) % numero) == 1){
             return true;
         }
         return false;
