@@ -1,6 +1,3 @@
-/*
- *
- */
 
 package primos;
 
@@ -16,9 +13,8 @@ public class TestePrimos {
     /**
      * Construtor Default
      */
-    public TestePrimos(){
-        this.numero = numero;
-    }
+    public TestePrimos(){ }
+    
     /** Construtor da classe
     *
     * @param Integer - numero
@@ -41,8 +37,14 @@ public class TestePrimos {
      *
      * @return Boolean - Informa se o número é primo ou não;
      */
-    public boolean calculaForcaBruta() {
-        for(int i = 2; i < (numero/2) + 1; i++){
+    public boolean calculaForcaBruta(){
+        if(numero==1 || numero==4){
+        	return false;
+        }else if(numero<1){
+        	return false;
+        }
+    	
+    	for(int i = 2; i < (numero/2) + 1; i++){
             if((numero%i) == 0){
                 return false;
             }
