@@ -1,20 +1,24 @@
 package testes;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.Assert;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import primos.TestePrimos;
 
-
+/**
+ * Rotina para realizar testes no método de força bruta
+ * 
+ * @author Felipe
+ * @version 1.0
+ * 
+ */
 public class TestesRotinasForcaBruta {
-	private TestePrimos numero1 = new TestePrimos(7);
 	
-	@Test
-	public void testForcaBruta(){
-		assertTrue(numero1.calculaForcaBruta());	
-		
-	}
+	
 }

@@ -11,12 +11,18 @@ package primos;
  */
 public class TestePrimos {
     private static int num_padrao_teste_fermat = 2;
-    private int numero;
+    private int numero=0;
 
-    /** Construtor da classe
-     *
-     * @param numero
+    /**
+     * Construtor Default
      */
+    public TestePrimos(){
+        this.numero = numero;
+    }
+    /** Construtor da classe
+    *
+    * @param Integer - numero
+    */
     public TestePrimos(int numero){
         this.numero = numero;
     }
@@ -48,7 +54,6 @@ public class TestePrimos {
      * este Método é menos custoso pois não precisa dividir
      * o número por todos os seus antecessores
      * 
-     * @param Int - base para o teste de fermat
      * 
      * @return Boolean - informando se o número é primo ou não
      */
