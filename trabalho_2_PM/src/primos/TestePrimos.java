@@ -39,8 +39,13 @@ public class TestePrimos {
      */
     public boolean calculaForcaBruta(){
         
+    	//Correção para números positivos que não são
+    	//primos e passam como primos pelo restante do código
     	if(numero == 1 || numero == 4){return false;}
         
+    	
+    	//Correção para retornar como NAO PRIMO o número zero
+    	//todos os números negativos.
         if(numero < 1){return false;}
     	
     	for(int i = 2; i < (numero/2) + 1; i++){
@@ -59,9 +64,11 @@ public class TestePrimos {
      * @return Boolean - informando se o número é primo ou não
      */
     public boolean calculaFermat() {
-    	
+    	//Correção para o número UM não passar como primo
     	if(numero == 1){return false;}
         
+    	//Correção para o número ZERO e todos os negativos seremimediatamente
+    	//retornados como NAO PRIMOS
         if(numero < 1){return false;}
     	
         //o numero 2 é primo mas nao passa no teste no fermat
