@@ -121,7 +121,7 @@ public class TestesRotinasFermat {
 		
 		
 		//fazendo set no numero desejado
-		numero.setNumero(1105); 
+		numero.setNumero(1729); 
 		assertTrue(numero.calculaFermat());		
 				
 		
@@ -248,5 +248,41 @@ public class TestesRotinasFermat {
 				
 		
 	}
+	
+	/**Caso de teste para valor nao inteiro (String).
+	 * 
+	 * 
+	 * 
+	 * @author Cadu
+	 */
+	@Test (expected = Error.class)
+	public void testFermatString(){
+				
+		numero.setNumero("abc"); 
+				
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
+	
+	/**Caso de teste para valor nao inteiro (Ponto Flutuante).
+	 * 
+	 * 
+	 * 
+	 * @author Cadu
+	 */
+	@Test (expected = Error.class)
+	public void testFermatPontoFlutuante(){
+				
+		numero.setNumero(18.333); 
+				
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
+	
+	
+	
+	
 	
 }
