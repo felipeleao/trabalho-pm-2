@@ -16,10 +16,10 @@ import primos.TestePrimos;
 public class TestesRotinasFermat {
 	private TestePrimos numero = new TestePrimos();
 	
-	/**Teste pertencente a classe de equivalencia:
-	 * N é um numero inteiro positivo primo
+	/**Caso de teste para numeros inteiros positivos e PRIMOS.
+	 * 
 	 *  
-	 * valores 2,3,5,7919
+	 * @author Cadu
 	 */
 	@Test
 	public void testFermatNumeroInteiroPositivoPrimo(){
@@ -43,10 +43,10 @@ public class TestesRotinasFermat {
 		
 	}
 	
-	/**Teste pertencente a classe de equivalencia:
-	 * N é um numero inteiro positivo nao primo
+	/**Caso de teste para numeros inteiros positivos e NAO primos.
+	 * 
 	 *  
-	 * valores 1,4,6,8,7917
+	 * @author Cadu
 	 */
 	@Test
 	public void testFermatNumeroInteiroPositivoNaoPrimo(){
@@ -73,10 +73,10 @@ public class TestesRotinasFermat {
 	
 	}
 	
-	/**Teste pertencente a classe de equivalencia:
-	 * N é um numero inteiro negativo
+	/**Caso de teste para numeros inteiros negativos.
+	 * 
 	 *  
-	 * valores -1,-2
+	 * @author Cadu
 	 */
 	@Test
 	public void testFermatNumeroInteiroNegativo(){
@@ -91,10 +91,10 @@ public class TestesRotinasFermat {
 	
 	}
 	
-	/**Teste pertencente a classe de equivalencia:
-	 * N é igual a 0
+	/**Caso de teste para o numero 0.
+	 * 
 	 *  
-	 * valores 0
+	 * @author Cadu
 	 */
 	@Test
 	public void testFermatNumeroZero(){
@@ -105,29 +105,29 @@ public class TestesRotinasFermat {
 		
 	}
 	
-	/**Teste pertencente a classe de equivalencia:
-	 * N é um número de Carmichael
-	 * 
-	 * Obs: o numero de Carmichael é numero primo mas no teste de Fermat é considerado não primo  
+	/**Caso de teste para numero de Carmichael.
 	 *  
-	 * valores 561,1105,1729
+	 * Obs: o numero de Carmichael não é um numero primo
+	 * mas no teste de Fermat é considerado primo. 
+	 *  
+	 * @author Cadu
 	 */
 	@Test
 	public void testFermatNumeroCarmichael(){
 		
 		//fazendo set no numero desejado
 		numero.setNumero(561); 
-		assertFalse(numero.calculaFermat());
+		assertTrue(numero.calculaFermat());
 		
 		
 		//fazendo set no numero desejado
 		numero.setNumero(1105); 
-		assertFalse(numero.calculaFermat());		
+		assertTrue(numero.calculaFermat());		
 				
 		
 	}
 	
-	/**Caso de teste para o maior número inteiro possível.
+	/**Caso de teste para o maior numero inteiro possivel.
 	 * Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
 	 * 
@@ -138,7 +138,7 @@ public class TestesRotinasFermat {
 	public void testFermatNumeroInteiroPositivoExtremo(){
 		
 		//fazendo set no numero desejado
-		numero.setNumero((int) (Math.pow(2,31)- 1)); 
+		numero.setNumero(2147483647); 
 		
 		//o numero (2^31) - 1 é um numero primo
 		assertTrue(numero.calculaFermat());
@@ -146,7 +146,7 @@ public class TestesRotinasFermat {
 		
 	}
 	
-	/**Caso de teste para o número sucessor ao maior inteiro possível.
+	/**Caso de teste para o numero sucessor ao maior inteiro possivel.
 	 * Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
 	 * Sucessor testado:
@@ -156,12 +156,32 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test (expected = Error.class)
-	public void testFermatNumeroSucessorAoInteiroPositivoExtremo() throws Exception{
+	public void testFermatNumeroSucessorAoInteiroPositivoExtremo(){
 		
 		//fazendo set no numero desejado
 		numero.setNumero(2147483648); 
 		
-		//o numero (2^31) - 1 é um numero primo
+		assertFalse(numero.calculaFermat());
+				
+		
+	}
+	
+	/**Caso de teste para o numero antecessor ao maior inteiro possivel.
+	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * 
+	 * Antecessor testado:
+	 * (2^31)-2 	= +2147483646
+	 *
+	 * 
+	 * @author Cadu
+	 */
+	@Test
+	public void testFermatNumeroAntecessorAoInteiroPositivoExtremo(){
+		
+		//fazendo set no numero desejado
+		numero.setNumero(2147483646); 
+		
+		//o numero (2^31) - 2 não é um numero primo
 		assertFalse(numero.calculaFermat());
 				
 		
