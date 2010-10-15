@@ -9,17 +9,14 @@ import org.junit.Test;
 import primos.TestePrimos;
 
 
-public class TestesRotinasPrimalidade {
+public class TestesRotinasForcaBruta {
 	private TestePrimos numero1 = new TestePrimos(7);
 	
 	@Test
 	public void testForcaBruta(){
-		assertTrue(numero1.calculaForcaBruta());	
-		
-	}
-	
-	@Test
-	public void testFermat(){
+		assertTrue(numero1.calculaForcaBruta());
 		assertTrue(numero1.calculaFermat());
+		
+		
 	}
 }
