@@ -31,7 +31,7 @@ public class TestesRotinasForcaBruta {
 	 * 
 	 */
 	@Test
-	public void testIntPosPrimos(){
+	public void testIntPositivoPrimos(){
 		
 		numeroTeste.setNumero(2);
 		assertTrue(numeroTeste.calculaForcaBruta());
@@ -57,9 +57,24 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test 
-	public void testLimiteInt(){
-		numeroTeste.setNumero((int)(Math.pow(2, 31)-1));
+	public void testLimiteSuperiorInt(){
+		numeroTeste.setNumero(2147483647);
 		assertTrue(numeroTeste.calculaForcaBruta());
+	}
+	
+	
+	/**Método para testar o menor inteiro possível.
+	 * <br>Menor Inteiro: -(2^31) = -2147483648
+	 * <p>
+	 * Número testado:
+	 * <br># -(2^31) - Resultado esperado: False -> OK
+	 * 
+	 * @author Felipe
+	 */
+	@Test 
+	public void testLimiteInferiorInt(){
+		numeroTeste.setNumero(-2147483648);
+		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	
@@ -77,7 +92,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test
-	public void testIntPosNPrimo(){
+	public void testIntPositivoNaoPrimo(){
 		numeroTeste.setNumero(1);
 		assertFalse(numeroTeste.calculaForcaBruta());
 		
@@ -130,7 +145,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test
-	public void testAdjLimiteInt(){
+	public void testAdjacenteLimiteInt(){
 		numeroTeste.setNumero(2147483646);
 		assertFalse(numeroTeste.calculaForcaBruta());
 		
@@ -151,9 +166,8 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testIntPosOutRange(){
+	public void testIntPositivoOutOfRange(){
 		numeroTeste.setNumero(2147483648);
-		//assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	
@@ -169,9 +183,8 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testIntNegOutRange(){
+	public void testIntNegativoOutOfRange(){
 		numeroTeste.setNumero(-2147483649);
-		//assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	
@@ -183,11 +196,22 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testParamString(){
+	public void testParametroString(){
 		numeroTeste.setNumero("ABC");
-		//assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
+	
+	/**Método para testar a passagem de Ponto Flutuante como parâmetro
+	 * <p>
+	 * String testada:
+	 * <br># 18.333 - Resultado Esperado: Exceção -> OK
+	 * </p>
+	 * @author Felipe
+	 */
+	@Test(expected = Error.class)
+	public void testParametroPontoFlutuante(){
+		numeroTeste.setNumero(18.333);
+	}
 	
 	
 	/**Método para testar números de Carmichael. Numeros de 
@@ -202,7 +226,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test
-	public void testCarmichael(){
+	public void testNumeroCarmichael(){
 		numeroTeste.setNumero(561);
 		assertFalse(numeroTeste.calculaForcaBruta());
 		
