@@ -50,7 +50,7 @@ public class TestesRotinasForcaBruta {
 	@Test
 	public void testLimiteInt(){
 		numeroTeste.setNumero((int)(Math.pow(2, 31)-1));
-		//assertTrue(numeroTeste.calculaForcaBruta());
+		assertTrue(numeroTeste.calculaForcaBruta());
 	}
 	
 	
@@ -96,6 +96,25 @@ public class TestesRotinasForcaBruta {
 		numeroTeste.setNumero(-2);
 		assertFalse(numeroTeste.calculaForcaBruta());
 		
+	}
+	
+	/**Método para testar os números adjacentes ao
+	 * maior inteiro possível.
+	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * 
+	 * Adjacentes testados:
+	 * (2^31)-2 = +2147483646
+	 * (2^31)-3 = +2147483645
+	 * 
+	 * @author Felipe
+	 */
+	@Test
+	public void testAdjLimiteInt(){
+		numeroTeste.setNumero((int)(Math.pow(2, 31)-2));
+		assertFalse(numeroTeste.calculaForcaBruta());
+		
+		numeroTeste.setNumero((int)(Math.pow(2, 31)-3));
+		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 }
