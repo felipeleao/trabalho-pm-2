@@ -14,9 +14,7 @@ public class TestesRotinasForcaBruta {
 	
 	@Test
 	public void testForcaBruta(){
-		assertTrue(numero1.calculaForcaBruta());
-		assertTrue(numero1.calculaFermat());
-		
+		assertTrue(numero1.calculaForcaBruta());	
 		
 	}
 }
