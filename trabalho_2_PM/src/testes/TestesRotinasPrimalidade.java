@@ -10,12 +10,12 @@ import primos.TestePrimos;
 
 
 public class TestesRotinasPrimalidade {
-	private TestePrimos numero1 = new TestePrimos(2);
+	private TestePrimos numero1 = new TestePrimos(7);
 	
 	@Test
 	public void testForcaBruta(){
 		assertTrue(numero1.calculaForcaBruta());
-		
+		assertTrue(numero1.calculaFermat());
 		
 		
 	}
