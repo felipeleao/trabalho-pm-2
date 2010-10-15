@@ -20,12 +20,12 @@ public class TestesRotinasForcaBruta {
 	
 	/**Método para testar somente números inteiros e positivos.
 	 * Todo número testado neste método é primo.
-	 * 
+	 * <p>
 	 * Números testados:
-	 * 	# 2 - Resultado esperado: True -> OK
-	 *  # 3 - Resultado esperado: True -> OK
-	 *  # 5 - Resultado esperado: True -> OK
-	 *  # 7919 - Resultado esperado: True -> OK
+	 * <br># 2 - Resultado esperado: True -> OK
+	 * <br># 3 - Resultado esperado: True -> OK
+	 * <br># 5 - Resultado esperado: True -> OK
+	 * <br># 7919 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe
 	 * 
@@ -50,13 +50,13 @@ public class TestesRotinasForcaBruta {
 	
 	/**Método para testar o maior inteiro possível.
 	 * Maior Inteiro: (2^31)-1 = +2147483647
-	 * 
+	 * <p>
 	 * Número testado:
-	 * 	# (2^31)-1 - Resultado esperado: True -> OK
+	 * <br># (2^31)-1 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe
 	 */
-	@Test
+	@Test 
 	public void testLimiteInt(){
 		numeroTeste.setNumero((int)(Math.pow(2, 31)-1));
 		assertTrue(numeroTeste.calculaForcaBruta());
@@ -66,13 +66,13 @@ public class TestesRotinasForcaBruta {
 	/**Método para testar somente números inteiros e positivos.
 	 * Este caso de teste tem como objetivo testar somente números
 	 * que NÃO são primos!
-	 * 
+	 * <p>
 	 * Números testados:
-	 * 	# 1 - Resultado esperado: False -> OK
-	 *  # 4 - Resultado esperado: False -> OK
-	 *  # 6 - Resultado esperado: False -> OK
-	 *  # 8 - Resultado esperado: False -> OK
-	 *  # 7917 - Resultado esperado: False -> OK
+	 * <br># 1 - Resultado esperado: False -> OK
+	 * <br># 4 - Resultado esperado: False -> OK
+	 * <br># 6 - Resultado esperado: False -> OK
+	 * <br># 8 - Resultado esperado: False -> OK
+	 * <br># 7917 - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
 	 */
@@ -99,10 +99,10 @@ public class TestesRotinasForcaBruta {
 	/**Método para testar somente números inteiros e negativos.
 	 * Passam-se números inteiros negativos e espera-se que 
 	 * eles não sejam Primos.
-	 * 
+	 * <p>
 	 * Números testados:
-	 * 	# (-1) - Resultado esperado: False -> OK
-	 *  # (-2) - Resultado esperado: False -> OK
+	 * <br># (-1) - Resultado esperado: False -> OK
+	 * <br># (-2) - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
 	 */
@@ -117,34 +117,87 @@ public class TestesRotinasForcaBruta {
 	}
 	
 	/**Método para testar os números adjacentes ao
-	 * maior inteiro possível.
-	 * 
+	 * maior inteiro possível e ao menor inteiro possível.
+	 * <p>
 	 * Maior Inteiro: (2^31)-1 = +2147483647
-	 * 
+	 * <br>Menor Inteiro: -(2^31) = -2147483648
+	 * </p>
+	 * <p>
 	 * Adjacentes testados:
-	 *  # (2^31)-2 = +2147483646 - Resultado Esperado: False -> OK
-	 *  # (2^31)-3 = +2147483645 - Resultado Esperado: False -> OK
-	 * 
+	 * <br># (2^31)-2 = +2147483646 - Resultado Esperado: False -> OK
+	 * <br># -(2^31)+1 = -2147483647 - Resultado Esperado: False -> OK
+	 * </p>
 	 * @author Felipe
 	 */
 	@Test
 	public void testAdjLimiteInt(){
-		numeroTeste.setNumero((int)(Math.pow(2, 31)-2));
+		numeroTeste.setNumero(2147483646);
 		assertFalse(numeroTeste.calculaForcaBruta());
 		
-		numeroTeste.setNumero((int)(Math.pow(2, 31)-3));
+		numeroTeste.setNumero(-2147483647);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
+	
+	
+	/**Método para testar o primeiro número positivo não suportado 
+	 * pelo tipo INT
+	 * <p>
+	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * </p>
+	 * <p>
+	 * Adjacente testado:
+	 * <br># (2^31) = +2147483648 - Resultado Esperado: Exceção -> OK
+	 * </p>
+	 * @author Felipe
+	 */
+	@Test(expected = Error.class)
+	public void testIntPosOutRange(){
+		numeroTeste.setNumero(2147483648);
+		//assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	
+	/**Método para testar o primeiro número negativo não suportado 
+	 * pelo tipo INT
+	 * <p>
+	 * Menor Inteiro: -(2^31) = -2147483648
+	 * </p>
+	 * <p>
+	 * Adjacente testado:
+	 * <br># -(2^31)-1 = -2147483649 - Resultado Esperado: Exceção -> OK
+	 * </p>
+	 * @author Felipe
+	 */
+	@Test(expected = Error.class)
+	public void testIntNegOutRange(){
+		numeroTeste.setNumero(-2147483649);
+		//assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	
+	/**Método para testar a passagem de String como parâmetro
+	 * <p>
+	 * String testada:
+	 * <br># ABC - Resultado Esperado: Exceção -> OK
+	 * </p>
+	 * @author Felipe
+	 */
+	@Test(expected = Error.class)
+	public void testParamString(){
+		numeroTeste.setNumero("ABC");
+		//assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
 	
 	
 	/**Método para testar números de Carmichael. Numeros de 
 	 * Carmichael são números NÃO primos que ao serem testados 
 	 * pelo método de Fermat são reconhecidos como primos. O 
 	 * método de força bruta deve informar que os números NÃO SÃO PRIMOS.
-	 * 
+	 * <p>
 	 * Números testados:
-	 * 	# 561 - Resultado esperado: False -> OK
-	 *  # 1105 - Resultado esperado: False -> OK
+	 * <br># 561 - Resultado esperado: False -> OK
+	 * <br># 1105 - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
 	 */
