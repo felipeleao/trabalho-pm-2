@@ -14,9 +14,12 @@ public class TestesRotinasPrimalidade {
 	
 	@Test
 	public void testForcaBruta(){
-		assertTrue(numero1.calculaForcaBruta());
+		assertTrue(numero1.calculaForcaBruta());	
+		
+	}
+	
+	@Test
+	public void testFermat(){
 		assertTrue(numero1.calculaFermat());
-		
-		
 	}
 }
