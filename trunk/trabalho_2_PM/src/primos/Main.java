@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /** Classe principal para chamar o sistema.
  * @author Bruno, Carlos Eduardo e Felipe
+ * @version 1.2;
  */
 public class Main {
 
@@ -20,6 +21,7 @@ public class Main {
             numero = entrada.nextInt();
             try{
                 testaMaiorUm(numero);
+                eNumeroUm(numero);
                 TestePrimos numero_testes_primalidade = new TestePrimos(numero);
 
                 System.out.println("Deseja testar por qual técnica?");
@@ -66,6 +68,12 @@ public class Main {
     public static void testaMaiorUm(int numero) throws Exception{
         if(numero<1){
             throw new Exception("\nO número deve ser maior que 1 (um).");
+        }
+    }
+    
+    public static void eNumeroUm(int numero) throws Exception{
+        if(numero==1){
+            throw new Exception("\nO número 1 (um) não é primo.");
         }
     }
 

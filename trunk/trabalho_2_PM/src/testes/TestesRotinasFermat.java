@@ -9,8 +9,8 @@ import primos.TestePrimos;
 /**
  * Classe de Testes para o método calculaFermat() 
  * 
- * @author Cadu
- * @version 1.0
+ * @author Bruno, Carlos Eduadrdo e Felipe
+ * @version 1.1
  * 
  */
 public class TestesRotinasFermat {
@@ -19,14 +19,14 @@ public class TestesRotinasFermat {
 	/**Caso de teste para numeros inteiros positivos e PRIMOS.
 	 * 
 	 *  
-	 * @author Cadu
+	 * @author Cadu, Bruno
 	 */
 	@Test
 	public void testFermatNumeroInteiroPositivoPrimo(){
 		
 		//fazendo set no numero desejado
 		numero.setNumero(2); 
-		//assertTrue(numero.calculaFermat());
+		assertTrue(numero.calculaFermat());
 		
 		//fazendo set no numero desejado
 		numero.setNumero(3); 
