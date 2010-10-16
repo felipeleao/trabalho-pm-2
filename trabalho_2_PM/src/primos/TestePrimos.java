@@ -4,7 +4,7 @@ package primos;
 /** Classe para realizar testes com os números e verificar se eles são
  * primos.
  * @author Bruno, Carlos Eduardo e Felipe;
- * @version 1.0;
+ * @version 1.2;
  */
 public class TestePrimos {
     private static int num_padrao_teste_fermat = 2;
@@ -38,17 +38,7 @@ public class TestePrimos {
      * @return Boolean - Informa se o número é primo ou não;
      */
     public boolean calculaForcaBruta(){
-        
-    	//Correção para números positivos que não são
-    	//primos e passam como primos pelo restante do código
-    	if(numero == 1 || numero == 4){return false;}
-        
-    	
-    	//Correção para retornar como NAO PRIMO o número zero
-    	//e todos os números negativos.
-        if(numero < 1){return false;}
-    	
-    	for(int i = 2; i < (numero/2) + 1; i++){
+       for(int i = 2; i < (numero/2) + 1; i++){
             if((numero%i) == 0){
                 return false;
             }
@@ -63,23 +53,17 @@ public class TestePrimos {
      * 
      * @return Boolean - informando se o número é primo ou não
      */
-    public boolean calculaFermat() {
-    	
-    	//Correção para o número UM não passar como primo
-    	if(numero == 1){return false;}
-        
-    	//Correção para o número ZERO e todos os negativos serem 
-    	//imediatamente retornados como NAO PRIMOS
-        if(numero < 1){return false;}
-    	
+    public boolean calculaFermat() {  	
         //o numero 2 é primo mas nao passa no teste no fermat
-        if(numero == 2){return true;}
+    	//pois o número 2 é igual a base do teste de Fermat
+        if(numero == 2){
+        	return true;
+        	}
         
     	if((Math.pow(num_padrao_teste_fermat,numero - 1) % numero) == 1){
             return true;
         }
         return false;
     }
-
    
 }

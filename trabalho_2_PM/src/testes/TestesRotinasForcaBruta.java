@@ -10,8 +10,8 @@ import primos.TestePrimos;
 /**
  * Rotina para realizar testes no método de força bruta
  * 
- * @author Felipe
- * @version 1.0
+ * @author Bruno, Carlos Eduadrdo e Felipe
+ * @version 1.1
  * 
  */
 public class TestesRotinasForcaBruta {
@@ -69,9 +69,9 @@ public class TestesRotinasForcaBruta {
 	 * Número testado:
 	 * <br># -(2^31) - Resultado esperado: False -> OK
 	 * 
-	 * @author Felipe
+	 * @author Felipe, bruno
 	 */
-	@Test 
+	@Test (expected = Error.class)
 	public void testLimiteInferiorInt(){
 		numeroTeste.setNumero(-2147483648);
 		assertFalse(numeroTeste.calculaForcaBruta());
@@ -121,7 +121,7 @@ public class TestesRotinasForcaBruta {
 	 * 
 	 * @author Felipe
 	 */
-	@Test
+	@Test (expected = Error.class)
 	public void testIntNegativo(){
 		numeroTeste.setNumero(-1);
 		assertFalse(numeroTeste.calculaForcaBruta());
@@ -142,13 +142,17 @@ public class TestesRotinasForcaBruta {
 	 * <br># (2^31)-2 = +2147483646 - Resultado Esperado: False -> OK
 	 * <br># -(2^31)+1 = -2147483647 - Resultado Esperado: False -> OK
 	 * </p>
-	 * @author Felipe
+	 * @author Felipe, Bruno
 	 */
-	@Test
-	public void testAdjacenteLimiteInt(){
+	
+	@Test 
+	public void testAdjacenteLimiteSuperiorInt(){
 		numeroTeste.setNumero(2147483646);
 		assertFalse(numeroTeste.calculaForcaBruta());
-		
+	}
+	
+	@Test (expected = Error.class)
+	public void testAdjacenteLimiteInferiorInt(){
 		numeroTeste.setNumero(-2147483647);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
