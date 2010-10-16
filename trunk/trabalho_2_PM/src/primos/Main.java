@@ -63,7 +63,7 @@ public class Main {
     /**Método para verificar se o numero passado é maior que 1(um).
      *
      * @param numero
-     * @throws Exception
+     * @throws Exception - informando que o número passado deve ser maior que 1 (um)
      */
     public static void testaMaiorUm(int numero) throws Exception{
         if(numero<1){
@@ -71,6 +71,11 @@ public class Main {
         }
     }
     
+    /**Método para verificar se o numero passado é igual a 1(um).
+    *
+    * @param numero
+    * @throws Exception - informando que o número 1 (um) não é primo
+    */
     public static void eNumeroUm(int numero) throws Exception{
         if(numero==1){
             throw new Exception("\nO número 1 (um) não é primo.");
