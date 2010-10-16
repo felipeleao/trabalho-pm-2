@@ -2,6 +2,7 @@ package testes;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ import primos.TestePrimos;
  * Rotina para realizar testes no método de força bruta
  * 
  * @author Bruno, Carlos Eduadrdo e Felipe
- * @version 1.1
+ * @version 1.1.1
  * 
  */
 public class TestesRotinasForcaBruta {
@@ -89,24 +90,28 @@ public class TestesRotinasForcaBruta {
 	}
 	
 	
-	/**Métodos para testar somente números inteiros e positivos.
-	 * Este caso de teste tem como objetivo testar somente números
-	 * que NÃO são primos!
+	/**Métodos para testar se o número UM não é primo.
+	 * 
 	 * <p>
 	 * Números testados:
-	 * <br># 1 - Resultado esperado: False -> OK
-	 * <br># 4 - Resultado esperado: False -> OK
-	 * <br># 6 - Resultado esperado: False -> OK
-	 * <br># 8 - Resultado esperado: False -> OK
-	 * <br># 7917 - Resultado esperado: False -> OK
+	 * <br># 1 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe, Bruno
-	 * @throws Exception - Exceção que informa que o número um não é primo.
+	 *
 	 */
-	@Test (expected = Exception.class)
-	public void testNumeroUM() throws Exception{
+	@Test
+	public void testNumeroUM(){
+		boolean numeroNaoPrimo;
+		
 		numeroTeste.setNumero(1);
-		assertFalse(numeroTeste.calculaForcaBruta());
+		
+		try{
+			numeroNaoPrimo = numeroTeste.calculaForcaBruta();
+			fail("Deveria ter ocorrido uma exceção");
+		}
+		catch(Exception e){
+			assertTrue(true);
+		}
 	}
 	
 	
