@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         int opcao;
         int numero;
+        boolean numeroEPrimo;
         String continua;
         Scanner entrada = new Scanner(System.in);
 
@@ -31,24 +32,19 @@ public class Main {
                 opcao = entrada.nextInt();
                 switch (opcao){
                         case 1:
-                            if(numero_testes_primalidade.calculaForcaBruta()){
-                            	System.out.println("O número " + numero + " é primo");
-                            }
-                            else{
-                            	System.out.println("O número " + numero + " não é primo");
-                            }
-                            break;
+                        	numeroEPrimo = numero_testes_primalidade.calculaForcaBruta();
+                        	ePrimo(numero, numeroEPrimo);
+                        	break;
+                            
                         case 2:
-                            if(numero_testes_primalidade.calculaFermat()){
-                            	System.out.println("O número " + numero + " é primo");
-                            }
-                            else{
-                            	System.out.println("O número " + numero + " não é primo");
-                            }
-                            break;
+                        	numeroEPrimo = numero_testes_primalidade.calculaFermat();
+                        	ePrimo(numero, numeroEPrimo);
+                        	break;
+                        	
                         default:
                             System.out.println("Opção inválida.");
                             break;
+                            
                 }
             }catch(Exception e){
                 System.out.println(e.getMessage());
@@ -81,5 +77,20 @@ public class Main {
             throw new Exception("\nO número 1 (um) não é primo.");
         }
     }
-
+    
+    /**Método para verificar se o numero passado é primo ou não e dar a 
+    * resposta adequada.
+    *
+    * @param numero
+    * @param ePrimoFlag - indica o resultado obtido passado pela função de cálculo
+    */
+    public static void ePrimo(int numero, boolean ePrimoFlag){
+    	if(ePrimoFlag){
+        	System.out.println("O número " + numero + " é primo");
+        }
+        else{
+        	System.out.println("O número " + numero + " não é primo");
+        }
+    }
+    
 }
