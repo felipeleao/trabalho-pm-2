@@ -22,7 +22,6 @@ public class Main {
             numero = entrada.nextInt();
             try{
                 testaMaiorUm(numero);
-                eNumeroUm(numero);
                 TestePrimos numero_testes_primalidade = new TestePrimos(numero);
 
                 System.out.println("Deseja testar por qual técnica?");
@@ -66,19 +65,8 @@ public class Main {
             throw new Exception("\nO número deve ser maior que 1 (um).");
         }
     }
-    
-    /**Método para verificar se o numero passado é igual a 1(um).
-    *
-    * @param numero
-    * @throws Exception - informando que o número 1 (um) não é primo
-    */
-    public static void eNumeroUm(int numero) throws Exception{
-        if(numero==1){
-            throw new Exception("\nO número 1 (um) não é primo.");
-        }
-    }
-    
-    /**Método para verificar se o numero passado é primo ou não e dar a 
+   
+   /**Método para verificar se o numero passado é primo ou não e dar a 
     * resposta adequada.
     *
     * @param numero
