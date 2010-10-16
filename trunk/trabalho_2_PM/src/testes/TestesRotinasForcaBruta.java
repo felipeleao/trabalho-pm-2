@@ -18,8 +18,8 @@ public class TestesRotinasForcaBruta {
 	
 	TestePrimos numeroTeste = new TestePrimos();
 	
-	/**Método para testar somente números inteiros e positivos.
-	 * Todo número testado neste método é primo.
+	/**Métodos para testar somente números inteiros e positivos.
+	 * Todos os números testado nestes métodos são primos.
 	 * <p>
 	 * Números testados:
 	 * <br># 2 - Resultado esperado: True -> OK
@@ -28,20 +28,29 @@ public class TestesRotinasForcaBruta {
 	 * <br># 7919 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe
+	 * @throws Exception 
 	 * 
 	 */
 	@Test
-	public void testIntPositivoPrimos(){
-		
+	public void testPrimeiroIntPositivoPrimos() throws Exception{
 		numeroTeste.setNumero(2);
 		assertTrue(numeroTeste.calculaForcaBruta());
-		
+	}
+	
+	@Test
+	public void testSegundoIntPositivoPrimos() throws Exception{
 		numeroTeste.setNumero(3);
 		assertTrue(numeroTeste.calculaForcaBruta());
-		
+	}
+	
+	@Test
+	public void tesTerceirotIntPositivoPrimos() throws Exception{
 		numeroTeste.setNumero(5);
 		assertTrue(numeroTeste.calculaForcaBruta());
-		
+	}
+	
+	@Test
+	public void testIntPositivoPrimos() throws Exception{
 		numeroTeste.setNumero(7919);
 		assertTrue(numeroTeste.calculaForcaBruta());
 		
@@ -55,9 +64,10 @@ public class TestesRotinasForcaBruta {
 	 * <br># (2^31)-1 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe
+	 * @throws Exception 
 	 */
 	@Test 
-	public void testLimiteSuperiorInt(){
+	public void testLimiteSuperiorInt() throws Exception{
 		numeroTeste.setNumero(2147483647);
 		assertTrue(numeroTeste.calculaForcaBruta());
 	}
@@ -69,16 +79,17 @@ public class TestesRotinasForcaBruta {
 	 * Número testado:
 	 * <br># -(2^31) - Resultado esperado: False -> OK
 	 * 
-	 * @author Felipe, bruno
+	 * @author Felipe, Bruno
+	 * @throws Exception 
 	 */
 	@Test (expected = Error.class)
-	public void testLimiteInferiorInt(){
+	public void testLimiteInferiorInt() throws Exception{
 		numeroTeste.setNumero(-2147483648);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	
-	/**Método para testar somente números inteiros e positivos.
+	/**Métodos para testar somente números inteiros e positivos.
 	 * Este caso de teste tem como objetivo testar somente números
 	 * que NÃO são primos!
 	 * <p>
@@ -89,29 +100,55 @@ public class TestesRotinasForcaBruta {
 	 * <br># 8 - Resultado esperado: False -> OK
 	 * <br># 7917 - Resultado esperado: False -> OK
 	 * 
-	 * @author Felipe
+	 * @author Felipe, Bruno
+	 * @throws Exception - Exceção que informa que o número um não é primo.
 	 */
-	@Test
-	public void testIntPositivoNaoPrimo(){
+	@Test (expected = Exception.class)
+	public void testNumeroUM() throws Exception{
 		numeroTeste.setNumero(1);
 		assertFalse(numeroTeste.calculaForcaBruta());
-		
-		numeroTeste.setNumero(4);
-		assertFalse(numeroTeste.calculaForcaBruta());
-		
-		numeroTeste.setNumero(6);
-		assertFalse(numeroTeste.calculaForcaBruta());
-		
-		numeroTeste.setNumero(8);
-		assertFalse(numeroTeste.calculaForcaBruta());
-		
-		numeroTeste.setNumero(7917);
-		assertFalse(numeroTeste.calculaForcaBruta());
-		
 	}
 	
 	
-	/**Método para testar somente números inteiros e negativos.
+	/**Métodos para testar somente números inteiros e positivos.
+	 * Este caso de teste tem como objetivo testar somente números
+	 * que NÃO são primos!
+	 * <p>
+	 * Números testados:
+	 * <br># 4 - Resultado esperado: False -> OK
+	 * <br># 6 - Resultado esperado: False -> OK
+	 * <br># 8 - Resultado esperado: False -> OK
+	 * <br># 7917 - Resultado esperado: False -> OK
+	 * 
+	 * @author Felipe, Bruno
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSegundoIntPositivoNaoPrimo() throws Exception{
+		numeroTeste.setNumero(4);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	@Test
+	public void testTerceiroIntPositivoNaoPrimo() throws Exception{
+		numeroTeste.setNumero(6);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	@Test
+	public void testQuartoIntPositivoNaoPrimo() throws Exception{
+		numeroTeste.setNumero(8);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	@Test
+	public void testIntPositivoNaoPrimo() throws Exception{
+		numeroTeste.setNumero(7917);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	
+	/**Métodos para testar somente números inteiros e negativos.
 	 * Passam-se números inteiros negativos e espera-se que 
 	 * eles não sejam Primos.
 	 * <p>
@@ -120,39 +157,51 @@ public class TestesRotinasForcaBruta {
 	 * <br># (-2) - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
+	 * @throws Exception 
 	 */
 	@Test (expected = Error.class)
-	public void testIntNegativo(){
+	public void testPrimeiroIntNegativo() throws Exception{
 		numeroTeste.setNumero(-1);
 		assertFalse(numeroTeste.calculaForcaBruta());
-		
-		numeroTeste.setNumero(-2);
-		assertFalse(numeroTeste.calculaForcaBruta());
-		
 	}
 	
-	/**Método para testar os números adjacentes ao
-	 * maior inteiro possível e ao menor inteiro possível.
+	@Test (expected = Error.class)
+	public void testSegundoIntNegativo() throws Exception{
+		numeroTeste.setNumero(-2);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	/**Método para testar o segundo maior inteiro positivo possível 
 	 * <p>
 	 * Maior Inteiro: (2^31)-1 = +2147483647
-	 * <br>Menor Inteiro: -(2^31) = -2147483648
 	 * </p>
 	 * <p>
-	 * Adjacentes testados:
+	 * Número testado:
 	 * <br># (2^31)-2 = +2147483646 - Resultado Esperado: False -> OK
-	 * <br># -(2^31)+1 = -2147483647 - Resultado Esperado: False -> OK
 	 * </p>
 	 * @author Felipe, Bruno
+	 * @throws Exception 
 	 */
 	
 	@Test 
-	public void testAdjacenteLimiteSuperiorInt(){
+	public void testAdjacenteLimiteSuperiorInt() throws Exception{
 		numeroTeste.setNumero(2147483646);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
+	/**Método para testar o segundo maior inteiro negativo possível
+	 * <p>
+	 * <br>Menor Inteiro: -(2^31) = -2147483648
+	 * </p>
+	 * <p>
+	 * Número testado:
+	 * <br># -(2^31)+1 = -2147483647 - Resultado Esperado: False -> OK
+	 * </p>
+	 * @author Felipe, Bruno
+	 * @throws Exception 
+	 */
 	@Test (expected = Error.class)
-	public void testAdjacenteLimiteInferiorInt(){
+	public void testAdjacenteLimiteInferiorInt() throws Exception{
 		numeroTeste.setNumero(-2147483647);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
@@ -170,7 +219,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testIntPositivoOutOfRange(){
+	public void testIntPositivoOutOfRange() throws Exception{
 		numeroTeste.setNumero(2147483648);
 	}
 	
@@ -187,7 +236,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testIntNegativoOutOfRange(){
+	public void testIntNegativoOutOfRange() throws Exception{
 		numeroTeste.setNumero(-2147483649);
 	}
 	
@@ -200,7 +249,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testParametroString(){
+	public void testParametroString() throws Exception{
 		numeroTeste.setNumero("ABC");
 	}
 	
@@ -213,12 +262,12 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testParametroPontoFlutuante(){
+	public void testParametroPontoFlutuante() throws Exception{
 		numeroTeste.setNumero(18.333);
 	}
 	
 	
-	/**Método para testar números de Carmichael. Numeros de 
+	/**Métodos para testar números de Carmichael. Numeros de 
 	 * Carmichael são números NÃO primos que ao serem testados 
 	 * pelo método de Fermat são reconhecidos como primos. O 
 	 * método de força bruta deve informar que os números NÃO SÃO PRIMOS.
@@ -230,10 +279,13 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test
-	public void testNumeroCarmichael(){
+	public void primeiroTestNumeroCarmichael() throws Exception{
 		numeroTeste.setNumero(561);
 		assertFalse(numeroTeste.calculaForcaBruta());
-		
+	}
+	
+	@Test
+	public void segundoTestNumeroCarmichael() throws Exception{
 		numeroTeste.setNumero(1105);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
