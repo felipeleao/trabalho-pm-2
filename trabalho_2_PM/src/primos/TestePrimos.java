@@ -7,6 +7,7 @@ package primos;
  * @version 1.2;
  */
 public class TestePrimos {
+	private static int num_UM = 1;
     private static int num_padrao_teste_fermat = 2;
     private int numero=0;
 
@@ -38,11 +39,7 @@ public class TestePrimos {
      * @return Boolean - Informa se o número é primo ou não;
      */
     public boolean calculaForcaBruta(){
-    	if(eNumeroUm(numero)){
-    		return false;
-    	}
-    	
-    	if(testaMaiorUm(numero)){
+    	if(testaMaiorOuIgualUm()){
     		return false;
     	}
     	
@@ -62,11 +59,9 @@ public class TestePrimos {
      * @return Boolean - informando se o número é primo ou não
      */
     public boolean calculaFermat(){  	
-    	if(eNumeroUm(numero)){
-    		return false;
-    	}
-    	
-    	if(testaMaiorUm(numero)){
+    	//Se o numero for menor ou igual a um o método testaMaiorOuIgualUm()
+    	//retorna true e o if retorna false informando que ele não é primo
+    	if(testaMaiorOuIgualUm()){
     		return false;
     	}
     	
@@ -82,25 +77,13 @@ public class TestePrimos {
         return false;
     }
    
-    /**Método para verificar se o numero passado é igual a 1(um).
-    *
-    * @param numero
-    * @throws Exception - informando que o número 1 (um) não é primo
-    */
-    private boolean eNumeroUm(int numero){
-        if(numero==1){
-            return true;
-        }
-        return false;
-    }
-    
     /**Método para verificar se o numero passado é maior que 1(um).
     *
     * @param numero
-    * @throws Exception - informando que o número passado deve ser maior que 1 (um)
+    * @return boolean - informando se o número é menor ou igual a 1 (um).
     */
-   private boolean testaMaiorUm(int numero){
-       if(numero<1){
+   private boolean testaMaiorOuIgualUm(){
+       if(numero <= num_UM){
            return true;
        }
        return false;
