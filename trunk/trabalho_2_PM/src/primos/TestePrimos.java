@@ -39,9 +39,8 @@ public class TestePrimos {
      * @return Boolean - Informa se o número é primo ou não;
      */
     public boolean calculaForcaBruta(){
-    	if(testaMaiorOuIgualUm()){
-    		return false;
-    	}
+    	//Teste para verificar se o número é menor que 2
+    	if(testaMaiorOuIgualUm()){return false;}
     	
     	for(int i = 2; i < (numero/2) + 1; i++){
             if((numero%i) == 0){
@@ -61,15 +60,11 @@ public class TestePrimos {
     public boolean calculaFermat(){  	
     	//Se o numero for menor ou igual a um o método testaMaiorOuIgualUm()
     	//retorna true e o if retorna false informando que ele não é primo
-    	if(testaMaiorOuIgualUm()){
-    		return false;
-    	}
+    	if(testaMaiorOuIgualUm()){return false;}
     	
     	//o numero 2 é primo mas nao passa no teste no fermat
     	//pois o número 2 é igual a base do teste de Fermat
-        if(numero == 2){
-        	return true;
-        	}
+        if(numero == 2){return true;}
         
     	if((Math.pow(num_padrao_teste_fermat,numero - 1) % numero) == 1){
             return true;
