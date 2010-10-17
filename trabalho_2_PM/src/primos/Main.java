@@ -20,37 +20,36 @@ public class Main {
         do{
             System.out.print("Entre com um número inteiro: ");
             numero = entrada.nextInt();
-            try{
-                TestePrimos numero_testes_primalidade = new TestePrimos(numero);
+            TestePrimos numero_testes_primalidade = new TestePrimos(numero);
 
-                System.out.println("Deseja testar por qual técnica?");
-                System.out.println("1- Força Bruta");
-                System.out.println("2- Teste de Fermat");
+            System.out.println("Deseja testar por qual técnica?");
+            System.out.println("1- Força Bruta");
+            System.out.println("2- Teste de Fermat");
 
-                opcao = entrada.nextInt();
-                switch (opcao){
-                        case 1:
-                        	numeroEPrimo = numero_testes_primalidade.calculaForcaBruta();
-                        	ePrimo(numero, numeroEPrimo);
-                        	break;
-                            
-                        case 2:
-                        	numeroEPrimo = numero_testes_primalidade.calculaFermat();
-                        	ePrimo(numero, numeroEPrimo);
-                        	break;
-                        	
-                        default:
-                            System.out.println("Opção inválida.");
-                            break;
-                            
-                }
-            }catch(Exception e){
-                System.out.println(e.getMessage());
+            opcao = entrada.nextInt();
+            switch (opcao){
+                    case 1:
+                    	numeroEPrimo = numero_testes_primalidade.calculaForcaBruta();
+                    	ePrimo(numero, numeroEPrimo);
+                    	break;
+                        
+                    case 2:
+                    	numeroEPrimo = numero_testes_primalidade.calculaFermat();
+                    	ePrimo(numero, numeroEPrimo);
+                    	break;
+                    	
+                    default:
+                        System.out.println("Opção inválida.");
+                        break;
+                        
             }
+            
             System.out.println("\nDeseja continuar (Sim ou Nao)? ");
             continua = entrada.next();
             System.out.println();
+            
         }while(continua.equals("sim") || continua.equals("Sim"));
+        
         System.out.println("Programa Terminado");
     }
    

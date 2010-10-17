@@ -106,6 +106,23 @@ public class TestesRotinasForcaBruta {
 	}
 	
 	
+	/**Métodos para testar se o número ZERO não é primo.
+	 * 
+	 * <p>
+	 * Números testados:
+	 * <br># 0 - Resultado esperado: False -> OK
+	 * 
+	 * @author Felipe, Bruno
+	 *
+	 */
+	@Test
+	public void testNumeroZERO(){
+		numeroTeste.setNumero(0);
+		assertFalse(numeroTeste.calculaForcaBruta());
+	}
+	
+	
+	
 	/**Métodos para testar somente números inteiros e positivos.
 	 * Este caso de teste tem como objetivo testar somente números
 	 * que NÃO são primos!

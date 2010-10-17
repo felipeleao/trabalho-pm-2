@@ -23,28 +23,19 @@ public class TestesRotinasFermat {
 	 * @ 
 	 */
 	@Test
-	public void testFermatPrimeiroInteiroPositivoPrimo() {
+	public void testFermatInteiroPositivoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(2); 
 		assertTrue(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void testFermatSegundoInteiroPositivoPrimo() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(3); 
 		assertTrue(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void testFermatTerceiroInteiroPositivoPrimo() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(5); 
 		assertTrue(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void testFermatNumeroInteiroPositivoPrimo() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(7919); 
 		assertTrue(numeroTeste.calculaFermat());
@@ -69,28 +60,19 @@ public class TestesRotinasFermat {
 	 * @author Cadu, Bruno
 	 */
 	@Test
-	public void testFermatPrimeiroInteiroPositivoNaoPrimo() {
+	public void testFermatInteiroPositivoNaoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(4); 
 		assertFalse(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void testFermatSegundoInteiroPositivoNaoPrimo() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(6); 
 		assertFalse(numeroTeste.calculaFermat());
-	}
 		
-	@Test
-	public void testFermatTerceiroInteiroPositivoNaoPrimo() {	
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(8); 
 		assertFalse(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void testFermatNumeroInteiroPositivoNaoPrimo() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(7917); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -102,14 +84,11 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test
-	public void testFermatPrimeiroInteiroNegativo() {
+	public void testFermatInteiroNegativo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(-1); 
 		assertFalse(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void testFermatSegundoInteiroNegativo() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(-2); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -129,27 +108,24 @@ public class TestesRotinasFermat {
 	
 	/**Caso de teste para numero de Carmichael.
 	 *  
-	 * Obs: o numero de Carmichael não é um numero primo
+	 * <p>Obs: o numero de Carmichael não é um numero primo
 	 * mas no teste de Fermat é considerado primo. 
 	 *  
 	 * @author Cadu
 	 */
 	@Test
-	public void primeiroTestFermatNumeroCarmichael() {
+	public void TestFermatNumeroCarmichael() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(561); 
 		assertTrue(numeroTeste.calculaFermat());
-	}
-	
-	@Test
-	public void segundoTestFermatNumeroCarmichael() {
+		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(1729); 
 		assertTrue(numeroTeste.calculaFermat());		
 	}
 	
 	/**Caso de teste para o maior numero inteiro possivel.
-	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * <br>Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
 	 * 
 	 * 
@@ -164,10 +140,10 @@ public class TestesRotinasFermat {
 	}
 	
 	/**Caso de teste para o numero sucessor ao maior inteiro possivel.
-	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * <br>Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
-	 * Sucessor testado:
-	 * (2^31) 	= +2147483648
+	 * <p>Sucessor testado:
+	 * <br>(2^31) 	= +2147483648
 	 *
 	 * 
 	 * @author Cadu
@@ -180,10 +156,10 @@ public class TestesRotinasFermat {
 	}
 	
 	/**Caso de teste para o numero antecessor ao maior inteiro possivel.
-	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * <br>Maior Inteiro: (2^31)-1 = +2147483647
 	 * 
-	 * Antecessor testado:
-	 * (2^31)-2 	= +2147483646
+	 * <p>Antecessor testado:
+	 * <br>(2^31)-2 	= +2147483646
 	 *
 	 * 
 	 * @author Cadu
