@@ -29,29 +29,29 @@ public class TestesRotinasForcaBruta {
 	 * <br># 7919 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe
-	 * @throws Exception 
+	 * @ 
 	 * 
 	 */
 	@Test
-	public void testPrimeiroIntPositivoPrimos() throws Exception{
+	public void testPrimeiroIntPositivoPrimos() {
 		numeroTeste.setNumero(2);
 		assertTrue(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void testSegundoIntPositivoPrimos() throws Exception{
+	public void testSegundoIntPositivoPrimos() {
 		numeroTeste.setNumero(3);
 		assertTrue(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void tesTerceirotIntPositivoPrimos() throws Exception{
+	public void tesTerceirotIntPositivoPrimos() {
 		numeroTeste.setNumero(5);
 		assertTrue(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void testIntPositivoPrimos() throws Exception{
+	public void testIntPositivoPrimos() {
 		numeroTeste.setNumero(7919);
 		assertTrue(numeroTeste.calculaForcaBruta());
 		
@@ -65,10 +65,10 @@ public class TestesRotinasForcaBruta {
 	 * <br># (2^31)-1 - Resultado esperado: True -> OK
 	 * 
 	 * @author Felipe
-	 * @throws Exception 
+	 * @ 
 	 */
 	@Test 
-	public void testLimiteSuperiorInt() throws Exception{
+	public void testLimiteSuperiorInt() {
 		numeroTeste.setNumero(2147483647);
 		assertTrue(numeroTeste.calculaForcaBruta());
 	}
@@ -81,10 +81,10 @@ public class TestesRotinasForcaBruta {
 	 * <br># -(2^31) - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe, Bruno
-	 * @throws Exception 
+	 * @ 
 	 */
-	@Test (expected = Error.class)
-	public void testLimiteInferiorInt() throws Exception{
+	@Test
+	public void testLimiteInferiorInt() {
 		numeroTeste.setNumero(-2147483648);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
@@ -94,24 +94,15 @@ public class TestesRotinasForcaBruta {
 	 * 
 	 * <p>
 	 * Números testados:
-	 * <br># 1 - Resultado esperado: True -> OK
+	 * <br># 1 - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe, Bruno
 	 *
 	 */
 	@Test
 	public void testNumeroUM(){
-		boolean numeroNaoPrimo;
-		
 		numeroTeste.setNumero(1);
-		
-		try{
-			numeroNaoPrimo = numeroTeste.calculaForcaBruta();
-			fail("Deveria ter ocorrido uma exceção");
-		}
-		catch(Exception e){
-			assertTrue(true);
-		}
+		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	
@@ -126,28 +117,28 @@ public class TestesRotinasForcaBruta {
 	 * <br># 7917 - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe, Bruno
-	 * @throws Exception 
+	 * @ 
 	 */
 	@Test
-	public void testSegundoIntPositivoNaoPrimo() throws Exception{
+	public void testSegundoIntPositivoNaoPrimo() {
 		numeroTeste.setNumero(4);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void testTerceiroIntPositivoNaoPrimo() throws Exception{
+	public void testTerceiroIntPositivoNaoPrimo() {
 		numeroTeste.setNumero(6);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void testQuartoIntPositivoNaoPrimo() throws Exception{
+	public void testQuartoIntPositivoNaoPrimo() {
 		numeroTeste.setNumero(8);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void testIntPositivoNaoPrimo() throws Exception{
+	public void testIntPositivoNaoPrimo() {
 		numeroTeste.setNumero(7917);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
@@ -162,16 +153,16 @@ public class TestesRotinasForcaBruta {
 	 * <br># (-2) - Resultado esperado: False -> OK
 	 * 
 	 * @author Felipe
-	 * @throws Exception 
+	 * @ 
 	 */
-	@Test (expected = Error.class)
-	public void testPrimeiroIntNegativo() throws Exception{
+	@Test
+	public void testPrimeiroIntNegativo() {
 		numeroTeste.setNumero(-1);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
-	@Test (expected = Error.class)
-	public void testSegundoIntNegativo() throws Exception{
+	@Test
+	public void testSegundoIntNegativo() {
 		numeroTeste.setNumero(-2);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
@@ -185,11 +176,11 @@ public class TestesRotinasForcaBruta {
 	 * <br># (2^31)-2 = +2147483646 - Resultado Esperado: False -> OK
 	 * </p>
 	 * @author Felipe, Bruno
-	 * @throws Exception 
+	 * @ 
 	 */
 	
 	@Test 
-	public void testAdjacenteLimiteSuperiorInt() throws Exception{
+	public void testAdjacenteLimiteSuperiorInt() {
 		numeroTeste.setNumero(2147483646);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
@@ -203,10 +194,10 @@ public class TestesRotinasForcaBruta {
 	 * <br># -(2^31)+1 = -2147483647 - Resultado Esperado: False -> OK
 	 * </p>
 	 * @author Felipe, Bruno
-	 * @throws Exception 
+	 * @ 
 	 */
-	@Test (expected = Error.class)
-	public void testAdjacenteLimiteInferiorInt() throws Exception{
+	@Test
+	public void testAdjacenteLimiteInferiorInt() {
 		numeroTeste.setNumero(-2147483647);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
@@ -224,7 +215,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testIntPositivoOutOfRange() throws Exception{
+	public void testIntPositivoOutOfRange() {
 		numeroTeste.setNumero(2147483648);
 	}
 	
@@ -241,7 +232,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testIntNegativoOutOfRange() throws Exception{
+	public void testIntNegativoOutOfRange() {
 		numeroTeste.setNumero(-2147483649);
 	}
 	
@@ -254,7 +245,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testParametroString() throws Exception{
+	public void testParametroString() {
 		numeroTeste.setNumero("ABC");
 	}
 	
@@ -267,7 +258,7 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test(expected = Error.class)
-	public void testParametroPontoFlutuante() throws Exception{
+	public void testParametroPontoFlutuante() {
 		numeroTeste.setNumero(18.333);
 	}
 	
@@ -284,13 +275,13 @@ public class TestesRotinasForcaBruta {
 	 * @author Felipe
 	 */
 	@Test
-	public void primeiroTestNumeroCarmichael() throws Exception{
+	public void primeiroTestNumeroCarmichael() {
 		numeroTeste.setNumero(561);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	@Test
-	public void segundoTestNumeroCarmichael() throws Exception{
+	public void segundoTestNumeroCarmichael() {
 		numeroTeste.setNumero(1105);
 		assertFalse(numeroTeste.calculaForcaBruta());
 	}

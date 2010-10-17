@@ -20,31 +20,31 @@ public class TestesRotinasFermat {
 	 * 
 	 *  
 	 * @author Cadu, Bruno
-	 * @throws Exception 
+	 * @ 
 	 */
 	@Test
-	public void testFermatPrimeiroInteiroPositivoPrimo() throws Exception{
+	public void testFermatPrimeiroInteiroPositivoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(2); 
 		assertTrue(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void testFermatSegundoInteiroPositivoPrimo() throws Exception{
+	public void testFermatSegundoInteiroPositivoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(3); 
 		assertTrue(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void testFermatTerceiroInteiroPositivoPrimo() throws Exception{
+	public void testFermatTerceiroInteiroPositivoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(5); 
 		assertTrue(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void testFermatNumeroInteiroPositivoPrimo() throws Exception{
+	public void testFermatNumeroInteiroPositivoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(7919); 
 		assertTrue(numeroTeste.calculaFermat());
@@ -57,19 +57,10 @@ public class TestesRotinasFermat {
 	 * 
 	 */
 	@Test
-	public void testFermatNumeroUM(){
-		boolean numeroNaoPrimo;
-		
+	public void testFermatNumeroUM(){		
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(1);
-		
-		try{
-			numeroNaoPrimo = numeroTeste.calculaForcaBruta();
-			fail("Deveria ter ocorrido uma exceção");
-		}
-		catch(Exception e){
-			assertTrue(true);
-		}
+		assertFalse(numeroTeste.calculaForcaBruta());
 	}
 	
 	/**Casos de teste para numeros inteiros positivos e NAO primos.
@@ -78,28 +69,28 @@ public class TestesRotinasFermat {
 	 * @author Cadu, Bruno
 	 */
 	@Test
-	public void testFermatPrimeiroInteiroPositivoNaoPrimo() throws Exception{
+	public void testFermatPrimeiroInteiroPositivoNaoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(4); 
 		assertFalse(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void testFermatSegundoInteiroPositivoNaoPrimo() throws Exception{
+	public void testFermatSegundoInteiroPositivoNaoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(6); 
 		assertFalse(numeroTeste.calculaFermat());
 	}
 		
 	@Test
-	public void testFermatTerceiroInteiroPositivoNaoPrimo() throws Exception{	
+	public void testFermatTerceiroInteiroPositivoNaoPrimo() {	
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(8); 
 		assertFalse(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void testFermatNumeroInteiroPositivoNaoPrimo() throws Exception{
+	public void testFermatNumeroInteiroPositivoNaoPrimo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(7917); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -111,14 +102,14 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test
-	public void testFermatPrimeiroInteiroNegativo() throws Exception{
+	public void testFermatPrimeiroInteiroNegativo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(-1); 
 		assertFalse(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void testFermatSegundoInteiroNegativo() throws Exception{
+	public void testFermatSegundoInteiroNegativo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(-2); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -130,7 +121,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test
-	public void testFermatNumeroZero() throws Exception{
+	public void testFermatNumeroZero() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(0); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -144,14 +135,14 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test
-	public void primeiroTestFermatNumeroCarmichael() throws Exception{
+	public void primeiroTestFermatNumeroCarmichael() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(561); 
 		assertTrue(numeroTeste.calculaFermat());
 	}
 	
 	@Test
-	public void segundoTestFermatNumeroCarmichael() throws Exception{
+	public void segundoTestFermatNumeroCarmichael() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(1729); 
 		assertTrue(numeroTeste.calculaFermat());		
@@ -164,8 +155,8 @@ public class TestesRotinasFermat {
 	 * 
 	 * @author Cadu
 	 */
-	@Test (expected = Error.class)
-	public void testFermatNumeroInteiroPositivoExtremo() throws Exception{
+	@Test
+	public void testFermatNumeroInteiroPositivoExtremo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(2147483647); 
 		//o numero (2^31) - 1 é um numero primo
@@ -182,7 +173,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test (expected = Error.class)
-	public void testFermatNumeroSucessorAoInteiroPositivoExtremo() throws Exception{
+	public void testFermatNumeroSucessorAoInteiroPositivoExtremo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(2147483648); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -198,7 +189,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test
-	public void testFermatNumeroAntecessorAoInteiroPositivoExtremo() throws Exception{
+	public void testFermatNumeroAntecessorAoInteiroPositivoExtremo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(2147483646); 
 		//o numero (2^31) - 2 não é um numero primo
@@ -213,7 +204,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test
-	public void testFermatNumeroInteiroNegativoExtremo() throws Exception{
+	public void testFermatNumeroInteiroNegativoExtremo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(-2147483648); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -229,7 +220,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test 
-	public void testFermatNumeroSucessorAoInteiroNegativoExtremo() throws Exception{
+	public void testFermatNumeroSucessorAoInteiroNegativoExtremo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(-2147483647); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -245,7 +236,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test (expected = Error.class)
-	public void testFermatNumeroAntecessorAoInteiroNegativoExtremo() throws Exception{
+	public void testFermatNumeroAntecessorAoInteiroNegativoExtremo() {
 		//fazendo set no numero desejado
 		numeroTeste.setNumero(2147483649); 
 		assertFalse(numeroTeste.calculaFermat());
@@ -258,7 +249,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test (expected = Error.class)
-	public void testFermatString() throws Exception{
+	public void testFermatString() {
 		numeroTeste.setNumero("abc"); 
 		assertFalse(numeroTeste.calculaFermat());
 	}
@@ -270,7 +261,7 @@ public class TestesRotinasFermat {
 	 * @author Cadu
 	 */
 	@Test (expected = Error.class)
-	public void testFermatPontoFlutuante() throws Exception{
+	public void testFermatPontoFlutuante() {
 		numeroTeste.setNumero(18.333); 
 		assertFalse(numeroTeste.calculaFermat());
 	}

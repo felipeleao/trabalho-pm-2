@@ -37,8 +37,14 @@ public class TestePrimos {
      *
      * @return Boolean - Informa se o número é primo ou não;
      */
-    public boolean calculaForcaBruta() throws Exception{
-    	eNumeroUm(numero);
+    public boolean calculaForcaBruta(){
+    	if(eNumeroUm(numero)){
+    		return false;
+    	}
+    	
+    	if(testaMaiorUm(numero)){
+    		return false;
+    	}
     	
     	for(int i = 2; i < (numero/2) + 1; i++){
             if((numero%i) == 0){
@@ -55,8 +61,14 @@ public class TestePrimos {
      * 
      * @return Boolean - informando se o número é primo ou não
      */
-    public boolean calculaFermat() throws Exception{  	
-    	eNumeroUm(numero);
+    public boolean calculaFermat(){  	
+    	if(eNumeroUm(numero)){
+    		return false;
+    	}
+    	
+    	if(testaMaiorUm(numero)){
+    		return false;
+    	}
     	
     	//o numero 2 é primo mas nao passa no teste no fermat
     	//pois o número 2 é igual a base do teste de Fermat
@@ -75,9 +87,22 @@ public class TestePrimos {
     * @param numero
     * @throws Exception - informando que o número 1 (um) não é primo
     */
-    public static void eNumeroUm(int numero) throws Exception{
+    private boolean eNumeroUm(int numero){
         if(numero==1){
-            throw new Exception("\nO número 1 (um) não é primo.");
+            return true;
         }
+        return false;
     }
+    
+    /**Método para verificar se o numero passado é maior que 1(um).
+    *
+    * @param numero
+    * @throws Exception - informando que o número passado deve ser maior que 1 (um)
+    */
+   private boolean testaMaiorUm(int numero){
+       if(numero<1){
+           return true;
+       }
+       return false;
+   }
 }
