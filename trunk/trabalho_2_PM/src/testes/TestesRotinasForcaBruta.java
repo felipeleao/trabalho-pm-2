@@ -220,6 +220,25 @@ public class TestesRotinasForcaBruta {
 	}
 	
 	
+	
+	/**Método para testar o primeiro número positivo não suportado 
+	 * pelo tipo INT
+	 * <p>
+	 * Maior Inteiro: (2^31)-1 = +2147483647
+	 * </p>
+	 * <p>
+	 * Adjacente testado:
+	 * <br># (2^31) = +2147483648 - Resultado Esperado: Exceção -> OK
+	 * </p>
+	 * @author Felipe
+	 */
+	@Test(expected = Error.class)
+	public void testNull() {
+		numeroTeste.setNumero(null);
+	}
+	
+	
+	
 	/**Método para testar o primeiro número positivo não suportado 
 	 * pelo tipo INT
 	 * <p>
