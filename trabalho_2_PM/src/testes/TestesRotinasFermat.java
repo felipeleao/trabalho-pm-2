@@ -139,13 +139,8 @@ public class TestesRotinasFermat {
 		assertTrue(numeroTeste.calculaFermat());
 	}
 	
-	/**Caso de teste para o numero sucessor ao maior inteiro possivel.
-	 * <br>Maior Inteiro: (2^31)-1 = +2147483647
-	 * 
-	 * <p>Sucessor testado:
-	 * <br>(2^31) 	= +2147483648
-	 *
-	 * 
+	/**Caso de teste para quando o valor passado ao teste for null.
+	 *  
 	 * @author Cadu
 	 */
 	@Test (expected = Error.class)
@@ -201,6 +196,23 @@ public class TestesRotinasFermat {
 		numeroTeste.setNumero(-2147483647); 
 		assertFalse(numeroTeste.calculaFermat());
 	}
+	
+	/**Caso de teste para o numero antecessor ao maior inteiro possivel.
+	 * Menor Inteiro: -((2^31)-1) = -2147483648
+	 * 
+	 * Antecessor testado:
+	 * -((2^31)-2) = -2147483649
+	 *
+	 * 
+	 * @author Cadu
+	 */
+	@Test (expected = Error.class)
+	public void testFermatNumeroNull() {
+		//fazendo set no numero desejado
+		numeroTeste.setNumero(null); 
+		assertFalse(numeroTeste.calculaFermat());
+	}
+	
 	
 	/**Caso de teste para o numero antecessor ao maior inteiro possivel.
 	 * Menor Inteiro: -((2^31)-1) = -2147483648
